@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <!--<script charset="UTF-8" type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>-->
+    <!--<script src="scripts/angular-bing-maps.js"></script>-->
+    <script src="../scripts/winstore-jscompat.js"></script>
+    <script src="../scripts/jquery-1.11.1.min.js"></script>
+    <script src="../scripts/angular.min.js"></script>    
+    <script src="../scripts/bootstrap.min.js"></script>
+    <script src="../scripts/controllers/app.js"></script>
+    <script src="../scripts/controllers/openpositioncontroller.js"></script>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/site.css" rel="stylesheet" />
+    <link href="../css/custom.css" rel="stylesheet" />
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    
+
+    
+    <style>
+           hr {
+            -moz-border-bottom-colors: none;
+            -moz-border-image: none;
+            -moz-border-left-colors: none;
+            -moz-border-right-colors: none;
+            -moz-border-top-colors: none;
+            border-color: #97cbe2;
+            border-style: solid none;
+            border-width: 1px 0;
+        }
+
+           table thead tr th{
+               background-color:skyblue;
+               text-align:center;
+           }
+    </style>
+</head>
+<body ng-app="myapp" ng-controller="openpositionctrl">
+    <div id="wrapper">
+        <!-- header -->
+        <div id="header">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <img id="backpagediv" src="../images/back_1.png" height="28" width="28" style="padding-top:0px; margin-top:10px" class="pull-left" ng-click="backtoPage()" />
+
+                        <a id="menu-toggle" href="javascript:void(0);" class="glyphicon btn-menu toggle" style="display:none">
+                            <i class="fa fa-bars fa-2x"></i>
+                        </a>
+                        <div style="padding-left:50px">
+                            <img id="menu-logo" src="../images/XView.png" height="36" width="36" />
+                            <a id="menu-title">Executive Dashboard</a>
+                            <!--<span style="color:#cc4141;font-size:18px; font-weight:bolder">eX</span>
+                            <span style="color:darkred; font-size:18px; font-weight:bolder">view</span>-->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container" style="padding-top:10px">
+            <div>  
+                <h4>Open Positions</h4>              
+                <table class="table table-striped">
+                    <!--<caption><b>Open Positions</b></caption>-->
+                    <thead>
+                        <tr >
+                            <th>Oppurtunity</th>
+                            <th>Tech</th>
+                            <th>Band</th>
+                            <th>Service</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="x in openPositions">
+                            <td>{{x["Opportunity Name"]}}</td>
+                            <td>{{x.Tech}}</td>
+                            <td>{{x.Band}}</td>
+                            <td>{{x["Service line"]}}</td>
+                            <td>{{x["Start date of Billing"]}}</td>
+                        </tr>
+                    </tbody>
+                </table>              
+            </div>
+            <hr class="nopadding" />
+            <div>  
+                <h4>Total no. of Positions</h4>      
+                <table class="table table-striped">             
+                    <thead>
+                        <tr>
+                            <th >OnSite</th>
+                            <th>OffShore</th>                           
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>100</td>
+                            <td>40</td>                            
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <hr class="nopadding" />
+            <div>
+                <h4>Positions Identified </h4>
+                <table class="table table-striped">                    
+                    <thead>
+                        <tr>
+                            <th>OnSite</th>
+                            <th>OffShore</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>100</td>
+                            <td>40</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <hr class="nopadding" />
+        </div>
+        <!-- footer -->
+        <div class="footer">
+            <div class="container-fluid">
+                <div class="row" id="bottomNav">
+                    <div class="col-xs-3 text-center"><a class="footerAnchor" href="../mapFrame.html"><i class="fa fa-home fa-2x"></i><br></a></div>
+                    <div class="col-xs-3 text-center"><a class="footerAnchor" href="#"><i class="fa fa-star fa-2x"></i><br></a></div>
+                    <div class="col-xs-3 text-center"><a class="footerAnchor" href="#"><i class="fa fa-search fa-2x"></i><br></a></div>
+                    <div class="col-xs-3 text-center"><a class="footerAnchor" href="../master.html"><i class="fa fa-sign-out fa-2x"></i><br></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
